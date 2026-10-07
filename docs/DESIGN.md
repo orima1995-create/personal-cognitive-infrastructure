@@ -1,4 +1,4 @@
-# V0.1 design and audit contract
+# V0.2 design and audit contract
 
 ## Purpose
 
@@ -14,9 +14,11 @@
 
 ## Canonical model
 
-1. `AI_PROPOSED`: AIが Seed / 単一Hook / Ruler / 期待Impactを候補化する。
-2. `USER_CONFIRMED`: 本人が入口と潜る意思を確認する。
+1. `AI_PROPOSED`: AIが Seed / 単一Hook / Ruler / 期待Impactを候補化する。本人のJOY/MUSTは未記録。
+2. `USER_CONFIRMED`: 本人が入口と潜る意思、およびJOY/MUSTを明示する。
 3. `OBSERVED`: 実際のExperienceと実測Impactを記録する。
+
+食いつかなかった場合は `AI_PROPOSED → USER_REJECTED` で終了する。拒否は本人の動機をAIが推定せず、正の学習信号にもならない。
 
 状態は逆戻りも飛び越しもしない。修正が必要ならエントリを編集して履歴を曖昧にせず、新しい提案として残す。
 
@@ -47,5 +49,5 @@ MUSTだけ、AI提案だけ、期待値だけ、珍しいだけの候補は学�
 
 ## Storage
 
-単一JSONドキュメントを正本とする。安全な一時ファイル置換で書き込み、各変更に時刻を残す。別DBやキャッシュはV0.1の範囲外。
+単一JSONドキュメントを正本とする。安全な一時ファイル置換で書き込み、各変更に時刻を残す。別DBやキャッシュはV0.2の範囲外。schema v2は未確認の動機を `null` とし、未知フィールドを拒否する。
 
