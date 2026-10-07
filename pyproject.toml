@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-cognitive-infrastructure"
+version = "0.1.0"
+description = "A minimal, human-controlled loop for discovering useful ways of seeing the world."
+requires-python = ">=3.11"
+
+[project.scripts]
+pci = "pci.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
