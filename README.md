@@ -52,3 +52,8 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
+## 別管理のフィールドノート
+
+キャンプの装備・近隣利用候補・実体験の記録は [CAMP FIELD NOTES](camp/README.md) に分離しています。
+[GEAR](camp/GEAR.md) / [SPOTS](camp/SPOTS.md) / [TRIPS](camp/TRIPS.md) の3分類で、所有・購入サジェスト、場所の公式ルール、実施結果を扱います。
+このノートはPCI本体の学習ストアや状態遷移には含まれません。
